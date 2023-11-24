@@ -1,0 +1,105 @@
+@import "./reset.scss";
+
+body {
+  background-color: #d8e2cc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.phone {
+  background-color: black;
+  border-radius: 50px;
+  height: 95%;
+  width: 420px;
+  padding: 50px 20px;
+  box-sizing: border-box;
+}
+
+.header {
+  overflow-x: scroll;
+  scrollbar-color: transparent transparent; /* Firefox에서 사용되는 스크롤바 색상 설정 */
+  /* Webkit 브라우저(Chrome, Safari)에서 사용되는 스크롤바 숨기기 */
+  &::-webkit-scrollbar {
+    width: 6px; /* 스크롤바 너비 설정 */
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent; /* 스크롤바 색상 설정 */
+  }
+  .header__list {
+    display: flex;
+    color: white;
+    gap: 10px;
+    width: max-content;
+    .header__list-item {
+      border: 1px solid rgba($color: #fff, $alpha: 0.5);
+      padding: 10px;
+      border-radius: 20px;
+    }
+    .header__list-item--inverted {
+      background-color: white;
+      color: black;
+    }
+  }
+}
+.cards {
+  margin: 20px 0px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  .cards__card {
+    background-color: white;
+    padding: 10px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+    .card__title {
+      font-size: 30px;
+    }
+    .card__footer {
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      span {
+        color: black;
+        border-radius: 20px;
+        border: 1px solid black;
+        padding: 7px 10px;
+      }
+      .price {
+        background-color: #fbd82f;
+      }
+      .length {
+        background-color: white;
+      }
+    }
+    &:first-child {
+      background-color: #24272c;
+      color: white;
+      border: 1px solid white;
+    }
+    &:nth-child(2) {
+      background-color: #f4f1ec;
+    }
+    &:nth-child(3) {
+      background-color: #fafeca;
+    }
+    &:nth-child(4) {
+      background-color: #a693f4;
+    }
+    &:nth-child(5) {
+      background-color: #fecfcd;
+    }
+    &:nth-child(6) {
+      background-color: #cafeda;
+    }
+
+    &:nth-child(3n) {
+      grid-column: span 2;
+    }
+  }
+}
