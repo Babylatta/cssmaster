@@ -1,7 +1,9 @@
 @import "./reset.scss";
 
+$grey: bfc2c0;
+
 body {
-  background-color: #d8e2cc;
+  background-color: #bcbfbf;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,97 +11,108 @@ body {
 }
 
 .phone {
-  background-color: black;
-  border-radius: 50px;
-  height: 95%;
-  width: 420px;
-  padding: 50px 20px;
+  background-color: $grey;
+  box-shadow: 5px 20px 30px rgba($color: #000000, $alpha: 0.5);
+  border-radius: 10px;
+  height: 90%;
+  width: 480px;
   box-sizing: border-box;
 }
 
 .header {
-  overflow-x: scroll;
-  scrollbar-color: transparent transparent; /* Firefox에서 사용되는 스크롤바 색상 설정 */
-  /* Webkit 브라우저(Chrome, Safari)에서 사용되는 스크롤바 숨기기 */
-  &::-webkit-scrollbar {
-    width: 6px; /* 스크롤바 너비 설정 */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 15px 30px 15px;
+  h1 {
+    font-weight: bold;
+    font-size: 15px;
   }
-  &::-webkit-scrollbar-thumb {
-    background-color: transparent; /* 스크롤바 색상 설정 */
+}
+
+.total {
+  background-color: #1f1414;
+  color: white;
+  font-weight: bold;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 0 20px;
+  gap: 7px;
+
+  .total__price {
+    font-size: 25px;
   }
-  .header__list {
-    display: flex;
-    color: white;
-    gap: 10px;
-    width: max-content;
-    .header__list-item {
-      border: 1px solid rgba($color: #fff, $alpha: 0.5);
-      padding: 10px;
-      border-radius: 20px;
+  .total__subtitle {
+    font-size: 13px;
+  }
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  .item {
+    border-top: 5px solid black;
+    position: relative;
+    background-color: #d7dbdb;
+    .item__info {
+      padding: 30px 15px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      align-items: flex-start;
+      .item__info-col {
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+        &:nth-child(2) {
+          align-items: flex-end;
+        }
+
+        .item__title {
+          font-size: 40px;
+          margin-bottom: 7px;
+          text-transform: uppercase;
+        }
+        .item__subtitle {
+          font-size: 15px;
+        }
+        .item__total-price {
+          font-size: 32px;
+        }
+        .item__piece-price {
+          font-size: 15px;
+        }
+      }
     }
-    .header__list-item--inverted {
-      background-color: white;
-      color: black;
+  }
+  .item__specs {
+    border-top: 4px solid black;
+    border-bottom: 4px solid black;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 137px);
+
+    .spec {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-weight: bold;
+      padding: 25px;
+      &:nth-child(2) {
+        border-left: 4px solid black;
+      }
     }
   }
 }
-.cards {
-  margin: 20px 0px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-  .cards__card {
-    background-color: white;
-    padding: 10px;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 30px;
-    .card__title {
-      font-size: 30px;
-    }
-    .card__footer {
-      font-size: 14px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      span {
-        color: black;
-        border-radius: 20px;
-        border: 1px solid black;
-        padding: 7px 10px;
-      }
-      .price {
-        background-color: #fbd82f;
-      }
-      .length {
-        background-color: white;
-      }
-    }
-    &:first-child {
-      background-color: #24272c;
-      color: white;
-      border: 1px solid white;
-    }
-    &:nth-child(2) {
-      background-color: #f4f1ec;
-    }
-    &:nth-child(3) {
-      background-color: #fafeca;
-    }
-    &:nth-child(4) {
-      background-color: #a693f4;
-    }
-    &:nth-child(5) {
-      background-color: #fecfcd;
-    }
-    &:nth-child(6) {
-      background-color: #cafeda;
-    }
 
-    &:nth-child(3n) {
-      grid-column: span 2;
-    }
-  }
+.item__photo {
+  position: absolute;
+  width: 37%;
+  height: 65%;
+  border: 4px solid black;
+  right: 15px;
+  bottom: 0.1px;
+  object-fit: cover;
 }
