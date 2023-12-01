@@ -12,93 +12,137 @@
     <title>CSS Layout Masterclass</title>
   </head>
   <body>
-    <div class="bar">
-      <span> Jade Hasting architects </span>
-    </div>
-    <div class="bar">
-      <span> projects </span>
-    </div>
-    <main class="main">
-      <nav class="main__menus">
-        <ul>
-          <li class="main__menu">Education</li>
-          <li class="main__menu">Community</li>
-          <li class="main__menu">food & culinary</li>
-          <li class="main__menu">workspace</li>
-        </ul>
-      </nav>
-      <div class="main__breadcrumb">
-        <div class="breadcrumb-left">browse by client</div>
-        <div class="breadcrumb-right">
-          <span class="right__featured">featured / </span
-          ><span class="right__gallery">gallery </span
-          ><span class="right__list">/ list </span>
+    <section class="settings">
+      <div class="storage-1">
+        <div class="storage-1__top">
+          <div class="midsize-circle midsize-circle__modifier"></div>
+          <div class="midsize-circle"></div>
+          <div class="midsize-circle"></div>
+        </div>
+        <div class="storage-1__mid">
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+        </div>
+        <div class="storage-1__bottom">
+          <span class="storage">14tb</span>
+          <div class="pictogram">
+            <i class="fa-solid fa-rotate-left"></i>
+          </div>
         </div>
       </div>
-      <div class="main__gallery">
-        <div class="gallery__project">
-          <div class="project__img"></div>
-          <div class="project__title">Awesome center</div>
+      <div class="storage-2">
+        <div class="storage-2__mid">
+          <div class="largesize-circle"></div>
+          <div class="smallsize-circle"></div>
         </div>
-        <div class="gallery__project">
-          <div class="project__img"></div>
-          <div class="project__title">Wine Institute</div>
-        </div>
-        <div class="gallery__project">
-          <div class="project__img"></div>
-          <div class="project__title">College center</div>
-        </div>
-        <div class="gallery__project">
-          <div class="project__img"></div>
-          <div class="project__title">A-wing Campus</div>
-        </div>
-        <div class="gallery__project">
-          <div class="project__img"></div>
-          <div class="project__title">Rounge Hall</div>
-        </div>
-        <div class="gallery__project">
-          <div class="project__img"></div>
-          <div class="project__title">Township</div>
-        </div>
-        <div class="gallery__project">
-          <div class="project__img"></div>
-          <div class="project__title">Delon laboratories</div>
-        </div>
-        <div class="gallery__project">
-          <div class="project__img"></div>
-          <div class="project__title">Oneon</div>
-        </div>
-        <div class="gallery__project">
-          <div class="project__img"></div>
-          <div class="project__title">Delon laboratories</div>
-        </div>
-        <div class="gallery__project">
-          <div class="project__img"></div>
-          <div class="project__title">Oneon</div>
-        </div>
-        <div class="gallery__project">
-          <div class="project__img"></div>
-          <div class="project__title">Delon laboratories</div>
-        </div>
-        <div class="gallery__project">
-          <div class="project__img"></div>
-          <div class="project__title">Oneon</div>
-        </div>
-        <div class="gallery__project">
-          <div class="project__img"></div>
-          <div class="project__title">Delon laboratories</div>
-        </div>
-        <div class="gallery__project">
-          <div class="project__img"></div>
-          <div class="project__title">Oneon</div>
+        <div class="storage-2__bottom">
+          <span class="storage">4tb</span>
+          <div class="pictogram">
+            <div class="minisize-circle"></div>
+            <div class="minisize-circle"></div>
+            <div class="minisize-circle"></div>
+            <div class="minisize-circle minisize-circle__modifier"></div>
+          </div>
         </div>
       </div>
-    </main>
-    <div class="bar">
-      <span> projects </span>
+      <div class="storage-3">
+        <div class="storage-3_mid">
+          <div class="largesize-circle"></div>
+          <div class="smallsize-circle"></div>
+        </div>
+        <div class="storage-3__bottom">
+          <span class="storage">8tb</span>
+          <div class="pictogram">
+            <div class="minisize-circle"></div>
+            <div class="minisize-circle"></div>
+            <div class="minisize-circle minisize-circle__modifier"></div>
+            <div class="minisize-circle minisize-circle__modifier"></div>
+          </div>
+        </div>
+      </div>
+      <div class="storage-4">
+        <div class="storage-4_mid">
+          <div class="largesize-circle"></div>
+          <div class="smallsize-circle"></div>
+        </div>
+        <div class="storage-4__bottom">
+          <span class="storage">2tb</span>
+          <div class="pictogram">
+            <div class="minisize-circle"></div>
+            <div class="minisize-circle minisize-circle__modifier"></div>
+            <div class="minisize-circle minisize-circle__modifier"></div>
+            <div class="minisize-circle minisize-circle__modifier"></div>
+          </div>
+        </div>
+      </div>
+      <div class="storage__used">
+        <div class="storage__info">
+          <h4 class="total">used(tb) / of total 8</h4>
+          <h1 class="value">5.66</h1>
+        </div>
+        <div class="storage__info">
+          <h4 class="total">available (tb)</h4>
+          <h1 class="value">2.34</h1>
+        </div>
+      </div>
+      
+      <div class="storage__manager">
+        <div class="manager__buttons">
+          <div class="manager__emoji">
+            <i class="fa-solid fa-list"></i>
+          </div>
+          <span class="manager__button">manage space</span>
+        </div>
+        <div class="manager__buttons">
+          <div class="manager__emoji">
+            <i class="fa-solid fa-cube"></i>
+          </div>
+          <span class="manager__button">disc setting</span>
+        </div>
+        <div class="manager__buttons">
+          <div class="manager__emoji">
+            <i class="fa-solid fa-braille"></i>
+          </div>
+          <span class="manager__button">create backup</span>
+        </div>
+      </div>
+    </section>
+    <section class="stats">
+      <div class="storage__detail">
+        <div class="detail__box">
+          <div class="box__content">free space</div>
+          <div class="box__storage">2.34TB</div>
+        </div>
+      </div>
+      <div class="storage__detail">
+        <div class="detail__box">
+          <div class="box__content">documents</div>
+          <div class="box__storage">840.54MB</div>
+        </div>
+      </div>
+      <div class="storage__detail">
+        <div class="detail__box">
+          <div class="box__content">audio files</div>
+          <div class="box__storage">1.08tb</div>
+        </div>
+      </div>
+      <div class="storage__detail">
+        <div class="detail__box">
+          <div class="box__content">images</div>
+          <div class="box__storage">1.82tb</div>
+        </div>
+      </div>
+      <div class="storage__detail">
+        <div class="detail__box">
+          <div class="box__content">video</div>
+          <div class="box__storage">2.38tb</div>
+        </div>
+      </div>
+
     </div>
-    <div class="bar">
-      <span> menu </span>
-    </div>
+
   </body>
 </html>
