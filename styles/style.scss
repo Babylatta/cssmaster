@@ -1,277 +1,143 @@
 @import "./reset.scss";
 
-$bg: #dee1e6;
-$grey: #cbcfd2;
-$darkGrey: #7f848a;
-$black: #393e44;
-$yellow: #edc212;
-$red: #e21a00;
-$blue: #392aa9;
+$bg: #f0f0f0;
+$accent: #c7c2cc;
+$borderWidth: 2px;
 
-%storage-common {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  background-color: $bg;
-}
-%storage_bottom {
-  display: flex;
-  justify-content: space-between;
-  font-size: 25px;
-  text-transform: uppercase;
-  padding: 0 20px;
-}
-%pictogram {
-  display: flex;
-  gap: 2px;
-  .minisize-circle {
-    height: 10px;
-    width: 10px;
-    border-radius: 50%;
-    background-color: $black;
+@keyframes slide {
+  0% {
+    transform: translateY(-3000%) rotateZ(90deg);
   }
-  .minisize-circle__modifier {
-    background-color: $grey;
+  100% {
+    transform: translateY(calc(0% - 602px)) rotateZ(90deg);
   }
-}
-
-@mixin largecircle($bgcolor) {
-  margin: 50px 0 30px 0;
-  width: 160px;
-  height: 160px;
-  background-color: $bgcolor;
-  border-radius: 50%;
-}
-@mixin smallcircle($bgcolor) {
-  width: 30px;
-  height: 30px;
-  background-color: $bgcolor;
-  border-radius: 50%;
-  position: absolute;
-  top: 113px;
 }
 
 body {
-  height: 100vh;
   display: grid;
-  grid-template-columns: 1fr 1.3fr;
   background-color: black;
-  gap: 2px;
+  grid-template-rows: 10fr 10fr 45fr 35fr;
+  grid-template-columns: 0.3fr repeat(4, 1fr);
+  gap: $borderWidth;
+  height: 100vh;
+  div {
+    background-color: $bg;
+  }
+}
 
-  .settings {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    grid-auto-flow: column;
+.logo {
+  font-size: 200px;
+  grid-column: span 2;
+  grid-row: span 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 80px;
+}
 
-    gap: 2px;
+.title {
+  grid-column: span 3;
+  font-size: 100px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+}
 
-    .storage-1 {
-      @extend %storage-common;
+.timetable {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  h4 {
+    font-size: 35px;
+    font-weight: bold;
+  }
+  span {
+    font-size: 20px;
+    margin-top: 7px;
+    font-weight: 600;
+  }
+}
 
-      .storage-1__top {
-        display: flex;
-        gap: 12px;
+.slogan {
+  grid-row: span 2;
+  font-size: 50px;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  overflow: hidden;
+  position: relative;
+  span {
+    position: absolute;
+    width: max-content;
+    animation: slide 5s linear infinite;
+  }
+}
 
-        .midsize-circle {
-          width: 22px;
-          height: 22px;
-          border-radius: 50%;
-          border: 1px solid black;
-        }
-        .midsize-circle__modifier {
-          background-color: black;
-        }
-      }
+.article {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 50px 0;
+  h2 {
+    width: 80%;
+    margin: 0 auto;
+    font-size: 60px;
+    font-weight: bold;
+  }
+  span {
+    width: 80%;
+    margin: 0 auto;
+    font-size: 25px;
+  }
+}
+.img {
+  background-image: url(https://source.unsplash.com/random);
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
 
-      .storage-1__mid {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 40px 0 20px 0;
-        gap: 5px;
+.cover {
+  background-color: #c7c2ca;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .cover__page {
+    border: 2px solid black;
+    width: 85%;
+    height: 85%;
+    display: flex;
+    flex-direction: column;
 
-        .box {
-          width: 40%;
-          border: 1.5px solid rgba(0, 0, 0, 0.4);
-          border-radius: 5px;
-
-          &:first-child {
-            height: 20px;
-            border-top-right-radius: 14px;
-            border-top-left-radius: 14px;
-          }
-          &:nth-child(2) {
-            height: 23px;
-            background-color: $black;
-          }
-          &:nth-child(3) {
-            height: 35px;
-            background-color: $red;
-          }
-          &:nth-child(4) {
-            height: 23px;
-            background-color: $grey;
-          }
-          &:last-child {
-            height: 20px;
-            border-bottom-left-radius: 8px;
-            border-bottom-right-radius: 8px;
-          }
-        }
-      }
-      .storage-1__bottom {
-        @extend %storage_bottom;
-      }
+    h2 {
+      margin: 70px 70px 20px 70px;
+      font-size: 65px;
+      font-weight: bold;
     }
-
-    .storage-2 {
-      @extend %storage-common;
-      .storage-2__mid {
-        display: flex;
-        justify-content: center;
-        position: relative;
-
-        .largesize-circle {
-          @include largecircle($black);
-        }
-        .smallsize-circle {
-          @include smallcircle($bg);
-        }
-      }
-      .storage-2__bottom {
-        @extend %storage_bottom;
-        .pictogram {
-          @extend %pictogram;
-        }
-      }
-    }
-    .storage-3 {
-      @extend %storage-common;
-      .storage-3_mid {
-        display: flex;
-        justify-content: center;
-        position: relative;
-
-        .largesize-circle {
-          @include largecircle($red);
-        }
-        .smallsize-circle {
-          @include smallcircle($bg);
-        }
-      }
-      .storage-3__bottom {
-        @extend %storage_bottom;
-        .pictogram {
-          @extend %pictogram;
-        }
-      }
-    }
-
-    .storage-4 {
-      @extend %storage-common;
-      .storage-4_mid {
-        display: flex;
-        justify-content: center;
-        position: relative;
-
-        .largesize-circle {
-          @include largecircle($grey);
-        }
-        .smallsize-circle {
-          @include smallcircle($bg);
-        }
-      }
-      .storage-4__bottom {
-        @extend %storage_bottom;
-        .pictogram {
-          @extend %pictogram;
-        }
-      }
-    }
-
-    .storage__used {
-      grid-column: 2 / span 2;
-      grid-row: 1 / span 2;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-
-      background-color: $bg;
-
-      .storage__info {
-        &:first-child {
-          margin-bottom: 80px;
-        }
-        .total {
-          font-size: 18px;
-        }
-        .value {
-          font-size: 200px;
-          font-weight: 400;
-        }
-      }
-    }
-    .storage__manager {
-      grid-column: 2 / span 2;
-      grid-row: 3 / span 2;
-      background-color: $bg;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 100px;
-
-      .manager__buttons {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        text-transform: uppercase;
-        width: 50%;
-        margin: 0 auto;
-
-        .manager__emoji {
-          font-size: 50px;
-        }
-        .manager__button {
-          font-size: 35px;
-        }
-      }
+    span {
+      margin: 50px 80px;
+      font-size: 20px;
+      text-decoration: underline;
     }
   }
-  .stats {
-    display: grid;
-    grid-template-rows: 1fr 0.4fr 0.8fr 0.9fr 1.8fr;
+}
+.here {
+  grid-column: span 3;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  h1 {
+    font-size: 320px;
+    text-transform: uppercase;
+    font-weight: bold;
 
-    font-size: 22px;
-    .storage__detail {
-      &:first-child {
-        background-color: $bg;
-        color: black;
-      }
-      &:nth-child(2) {
-        background-color: $yellow;
-        color: black;
-      }
-      &:nth-child(3) {
-        background-color: $darkGrey;
-        color: black;
-      }
-      &:nth-child(4) {
-        background-color: $red;
-        color: white;
-      }
-      &:last-child {
-        background-color: $blue;
-        color: white;
-      }
-      .detail__box {
-        display: flex;
-        justify-content: space-between;
-        width: 95%;
-        margin: 20px auto;
-        text-transform: uppercase;
-      }
-    }
+    margin: 0 50px;
+  }
+  span {
+    margin: 0 80px;
+    font-size: 20px;
   }
 }
