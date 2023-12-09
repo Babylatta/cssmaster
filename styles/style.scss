@@ -1,70 +1,80 @@
 @import "./reset.scss";
 
-$white: #dee1d6;
-$green: #5ebc44;
+$white: #dde2d2;
+$blue: #01a1c8;
+$red: #d03022;
+$deepRed: #583634;
+$bg: #dde2d2;
 
 body {
-  background-color: black;
-  height: 100vh;
+  height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .poster {
-  background-color: $green;
+  margin-top: 30px;
+  background-color: $bg;
   width: 38%;
   height: 100%;
+  padding: 30px;
   display: grid;
-  grid-template-rows: 0.3fr 0.7fr;
-  .top {
-    display: grid;
-    grid-template-columns: 70% 30%;
-    grid-template-rows: 30% 70%;
-    padding: 40px;
-    row-gap: 10px;
-    .top__box {
+  grid-template-columns: 100px 1fr 100px;
+  grid-template-rows: 100px 1.2fr 100px 1.1fr 100px 1.2fr 100px;
+  .top-left,
+  .top-top,
+  .top-right,
+  .center-bottom {
+    background-color: $blue;
+  }
+
+  .top-bottom,
+  .conter-center,
+  .bottom-top {
+    background-color: $white;
+  }
+
+  .center-left,
+  .center-right {
+    background-color: $deepRed;
+    grid-row: span 3;
+  }
+
+  .center-top,
+  .bottom-left,
+  .bottom-right,
+  .bottom-bottom {
+    background-color: $red;
+  }
+
+  .top-left,
+  .top-right,
+  .bottom-right,
+  .bottom-left {
+    grid-row: span 2;
+  }
+
+  .top-bottom,
+  .center-center,
+  .bottom-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 20px;
+    font-size: 22px;
+    font-weight: bold;
+  }
+  .center-center {
+    gap: 0px;
+    font-size: 110px;
+  }
+  .bottom-top {
+    justify-content: space-between;
+    .address {
       display: flex;
       flex-direction: column;
-      font-size: 20px;
-      gap: 7px;
-      font-weight: bold;
-      &:nth-child(3) {
-        font-size: 200px;
-        font-weight: bold;
-      }
-      &:last-child {
-        font-size: 30px;
-        color: white;
-        margin-top: 80px;
-        gap: 10px;
-        font-weight: 300;
-      }
-    }
-  }
-  .bottom {
-    overflow: hidden;
-
-    .circles {
-      background-color: black;
-      display: grid;
-      grid-template-rows: repeat(11, 1fr);
-      grid-template-columns: repeat(11, 1fr);
       gap: 10px;
-      height: 100%;
-      transform: scale(1.1);
-
-      .circle {
-        background-color: $green;
-        border-radius: 50%;
-
-        @for $i from 1 through 9 {
-          @for $j from (11 * $i)+2 through (11 * $i)+1 + $i {
-            &:nth-child(#{$j}) {
-              background-color: $white;
-            }
-          }
-        }
-      }
     }
   }
 }
